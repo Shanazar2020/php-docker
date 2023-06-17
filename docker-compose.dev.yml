@@ -12,6 +12,12 @@ services:
       dockerfile: ./php/Dockerfile
     volumes:
       - ./app:/var/www/html
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: docker-php
 
   # mysql
   db:
@@ -26,6 +32,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: secret
       MYSQL_DATABASE: docker-php
+
 
 volumes:
   mysqldata:
